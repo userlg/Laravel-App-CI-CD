@@ -1,11 +1,13 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://github.com/userlg/Laravel-App-CI-CD/actions"><img src="https://github.com/YOUR-USERNAME/YOUR-REPO/workflows/CI/badge.svg" alt="CI Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
+
+> **Note:** Recuerda reemplazar `userlg/Laravel-App-CI-CD` en el badge de CI con tu usuario y repositorio de GitHub.
 
 ## About Laravel
 
@@ -41,6 +43,78 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 - **[DevSquad](https://devsquad.com/hire-laravel-developers)**
 - **[Redberry](https://redberry.international/laravel-development)**
 - **[Active Logic](https://activelogic.com)**
+
+## Development
+
+### Requirements
+
+- PHP 8.2 or higher
+- Composer
+- Node.js 18+ and Yarn
+- SQLite (for testing)
+
+### Setup
+
+```bash
+# Install PHP dependencies
+composer install
+
+# Install Node dependencies
+yarn install
+
+# Copy environment file
+cp .env.example .env
+
+# Generate application key
+php artisan key:generate
+
+# Run migrations
+php artisan migrate
+
+# Build assets
+yarn build
+```
+
+### Running Tests
+
+```bash
+# Run all tests with Pest
+php artisan test
+
+# Run tests with coverage
+php artisan test --coverage
+```
+
+### Code Style
+
+This project uses [Laravel Pint](https://laravel.com/docs/pint) for code styling.
+
+```bash
+# Check code style
+./vendor/bin/pint --test
+
+# Fix code style
+./vendor/bin/pint
+```
+
+### Continuous Integration
+
+This project uses GitHub Actions for CI/CD. On every push and pull request, the following checks run:
+
+- ✅ **Tests**: Runs the full Pest test suite on PHP 8.2 and 8.3
+- 🎨 **Code Style**: Validates code follows Laravel Pint standards
+- 📦 **Build Assets**: Compiles frontend assets with Vite
+
+### Development Server
+
+```bash
+# Run development server (includes Laravel server, queue worker, and Vite)
+composer dev
+
+# Or run individually
+php artisan serve
+yarn dev
+```
 
 ## Contributing
 
