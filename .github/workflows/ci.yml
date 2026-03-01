@@ -96,7 +96,7 @@ jobs:
         run: test -f public/build/manifest.json
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: build-assets
           path: public/build/
